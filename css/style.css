@@ -1,0 +1,209 @@
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --mainbg:hsl(234, 17%, 12%);
+    --cardbgbottom:hsl(236, 21%, 26%);
+    --cardbgtop:hsl(236, 21%, 26%);
+    --timeColor:hsl(345, 95%, 68%);
+    --durationColor:hsl(237, 18%, 59%);
+    --headingColor:hsl(0, 0%, 100%);
+
+}
+
+body{
+    font-family: 'Red Hat Text', sans-serif;
+    background: url('../images/bg-stars.svg'),var(--mainbg);
+    margin:0;
+}
+.heading-container{
+    padding:0 20px;
+}
+.heading{
+    color: var(--headingColor);
+    text-align: center;
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    position:relative;
+    top: 100px;;
+}
+
+
+
+.all-counts{
+    display:grid;
+    gap:0.5rem;
+    grid-template-columns: repeat(4,80px);
+    justify-content: center;
+    margin-top:20px;
+    position:relative;
+    top: 100px;;
+
+
+    
+}
+
+
+
+.count-down{
+    width:5rem;
+    height:4rem;
+    margin-top:40px;
+    position:relative;
+}
+
+
+/* countdown card styles */
+.countdown-topcard{
+    max-width:5rem;
+    height:2rem;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.2);
+    text-align: center;
+    background-color: var(--cardbgtop);
+    margin-bottom:1px;
+    border-radius: 5px;
+
+}
+
+.countdown-bottomcard{
+    max-width:5rem;
+    height:2rem;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
+    transition: 1s;
+    text-align: center;
+    background-color: var(--cardbgbottom);
+    border-radius: 5px;
+}
+
+.time{
+    position:absolute;
+    top:-3rem;
+    left:1rem;
+    font-size:2.5rem;
+    color:var(--timeColor)
+}
+
+/* if day gets longer style has to be changed to this in js */
+.dayStyle{
+    position:absolute;
+    top:-3rem;
+    left:0.5rem;
+    font-size:2.5rem;
+    color:var(--timeColor)
+}
+
+.duration{
+    color:var(--durationColor);
+    font-size:7px;
+    margin-top:10px;
+    text-align: center;
+    letter-spacing: 5px;
+}
+
+
+
+
+/* footer */
+
+footer{
+    background: url('../images/pattern-hills.svg');
+    position:absolute;
+    bottom:-40px;
+    width: 100%;
+    margin-bottom:40px;
+    padding:50px;
+}
+.socials{
+    display:flex;
+    justify-content:center;
+    margin-bottom: 30px;
+}
+
+.social{
+    margin:0 15px;
+    cursor: pointer;
+}
+
+.social:hover{
+    cursor: pointer;
+    filter: invert(69%) sepia(45%) saturate(6996%) hue-rotate(313deg) brightness(105%) contrast(97%);
+}
+
+
+
+.attribution{
+    text-align: center;
+}
+
+.atext{
+    color:var(--timeColor)
+}
+
+
+/* flip card effect and number hidden */
+.flipcard{
+    transform:translateY(-100%) rotateX(180deg);;
+    opacity:0.3;
+}
+
+
+.hideNumber{
+    transition:0.3ms;
+    opacity:0;
+}
+
+.showNumber{
+    transition:2s;
+    opacity:1; 
+}
+
+
+
+@media only screen and (min-width:820px) {
+
+    .all-counts{
+        gap:1rem;
+        grid-template-columns: repeat(4,100px);   
+    }
+
+    .count-down{
+        width:6rem;
+        height:5rem;
+    }
+
+    .countdown-topcard{
+        max-width:6rem;
+        height:3rem;
+        border-radius:5px 5px 10px 10px;
+    
+    }
+    .countdown-bottomcard{
+        max-width:6rem;
+        height:3rem;
+        border-radius:10px 10px 5px 5px;
+    
+    }
+    
+    .time{
+        position:absolute;
+        top:-2rem;
+        left:1.3rem;
+        font-size:2.5rem;
+    }
+
+
+    /* if day gets longer style has to be changed to this in js */
+    .dayStyle{
+        position:absolute;
+        top:-2rem;
+        left:1.1rem;
+        font-size:2.5rem; 
+    }
+
+    .duration{
+        font-size:10px;
+    }
+    
+}
+
